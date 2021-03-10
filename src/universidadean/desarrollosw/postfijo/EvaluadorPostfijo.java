@@ -34,10 +34,8 @@ public class EvaluadorPostfijo {
 
         for (String s: expresion) {
             if (s.equals("*") || s.equals("/") || s.equals("+")|| s.equals("-")) {
-                int value1= 0;
-                int value2 = 0;
-                value1 = pila.pop();
-                value2 = pila.pop();
+                int value1= pila.pop();;
+                int value2 = pila.pop();
                 switch (s) {
                     case "*":
                         pila.push(value2* value1);
@@ -52,7 +50,6 @@ public class EvaluadorPostfijo {
                     case "-":
                         pila.push(value2- value1);
                         break;
-
                 }
 
             } else {
