@@ -36,10 +36,8 @@ public class EvaluadorPostfijo {
             if (s.equals("*") || s.equals("/") || s.equals("+")|| s.equals("-")) {
                 int value1= 0;
                 int value2 = 0;
-                value1 = pila.peek();
-                pila.pop();
-                value2 = pila.peek();
-                pila.pop();
+                value1 = pila.pop();
+                value2 = pila.pop();
                 switch (s) {
                     case "*":
                         pila.push(value2* value1);
@@ -62,9 +60,6 @@ public class EvaluadorPostfijo {
             }
 
         }
-
-        // TODO: Realiza la evaluación de la expresión en formato postfijo
-
         return pila.peek();
     }
 
